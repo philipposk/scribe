@@ -51,12 +51,16 @@ export function createOpenRouterEngine(apiKey: string): TranscriptionEngine {
       }
 
       try {
-        const data = JSON.parse(bodyText) as { text?: string };
+        const data = JSON.parse(bodyText) as {
+          text?: string;
+          usage?: { seconds?: number };
+        };
         const text = (data.text ?? "").trim();
+        // OpenRouter reports billed audio seconds in usage.seconds; fall back to a size-based estimate.
         const durationSeconds =
-          input.file instanceof Blob
-            ? estimateDurationSecondsFromBytes(input.file.size)
-            : 0;
+          typeof data.usage?.seconds === "number" && data.usage.seconds > 0
+            ? data.usage.seconds
+            : estimateDurationSecondsFromBytes(input.file.size);
 
         return {
           text,
