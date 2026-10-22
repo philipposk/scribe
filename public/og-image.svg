@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>scribe</title>
+  <rect width="1200" height="630" fill="#111827"/>
+  <g transform="translate(120 155) scale(5)"><rect x="26" y="12" width="12" height="24" rx="6" fill="#f2c14e"/><path d="M19 30a13 13 0 0 0 26 0" fill="none" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/><path d="M32 43v8M24 52h16" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/></g>
+  <text x="520" y="310" fill="#f3f4f6" font-family="'Helvetica Neue', Arial, sans-serif" font-size="128" font-weight="700" letter-spacing="-3">scribe</text>
+  <text x="524" y="378" fill="#9ca3af" font-family="Georgia, serif" font-size="34" font-style="italic">Speech to text for any app.</text>
+  <text x="524" y="430" fill="#6b7280" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26">Under $0.10 per hour of audio · scribe.6x7.gr</text>
+</svg>

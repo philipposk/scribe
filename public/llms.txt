@@ -1,0 +1,15 @@
+# scribe
+
+> A small, standalone, shared speech-to-text web service. Apps send audio and get text back. Uses Groq whisper-large-v3-turbo first and OpenRouter Whisper as a backup, keeping cost under $0.10 per hour of audio. Used by Sparks (https://sparks.6x7.gr) for voice ideas.
+
+## Pages
+- / — Home and overview
+
+## API
+- POST /v1/transcribe — multipart `file` (audio, up to 25 MB) and optional `language`. Requires `Authorization: Bearer <app key>`. Returns JSON `{ text, language, durationSeconds, engine, costUsdEstimate }`. Keys are issued per app; there is no public key.
+
+## Source
+- https://github.com/philipposk/scribe (Next.js on Vercel)
+
+## Contact
+Built on the 6x7 platform (https://6x7.gr)
