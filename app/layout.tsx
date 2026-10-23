@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteJsonLd } from "@/components/SiteJsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  robots: { index: true, follow: true },
   metadataBase: new URL(SITE_URL),
   title: { default: `${SITE_NAME}: speech to text for any app`, template: `%s | ${SITE_NAME}` },
   description: SITE_DESCRIPTION,
@@ -39,7 +41,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteJsonLd />{children}</body>
     </html>
   );
 }
